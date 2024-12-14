@@ -41,6 +41,12 @@ inputs:
       - recovery
       - vendorboot
 
+  outputs:
+    out_img:
+      description: 'Path to the built recovery image'
+    out_zip:
+      description: 'Path to the built recovery ZIP file'
+
 runs:
   using: 'composite'
   steps:
