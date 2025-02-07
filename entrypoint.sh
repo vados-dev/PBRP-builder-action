@@ -37,6 +37,10 @@ git config --global user.email "$GITHUB_ACTOR_ID+$GITHUB_ACTOR@users.noreply.git
 # Initialize the repo
 echo "Initializing PBRP repo..."
 repo init --depth=1 -u https://github.com/vados-dev/manifest_pb.git -b "$MANIFEST_BRANCH"
+sed -i 's/android_system_core/android_system_core_old/' .repo/manifests/omni-aosp.xml ;
+sed -i 's/android_frameworks_base/android_frameworks_base_old/' .repo/manifests/omni-aosp.xml ;
+sed -i 's/android_frameworks_base/android_frameworks_base_old/g' .repo/manifests/remove-minimal.xml ;
+sed -i 's/android_frameworks_base/android_frameworks_base_old/' .repo/manifests/twrp-extras.xml ;
 
 # Sync the repo
 echo "Syncing PBRP repo..."
