@@ -5,7 +5,7 @@ description: "A GitHub action to build PitchBlack Recovery Project (PBRP) for a 
 inputs:
   MANIFEST_BRANCH:
     description: 'PBRP Manifest Branch'
-    default: 'android-12.1'
+    default: 'android-9.0'
     type: choice
     options:
       - android-12.1
@@ -17,23 +17,23 @@ inputs:
       - android-6.0
   DEVICE_TREE:
     description: 'Custom Recovery Tree URL (your device tree repository)'
-    default: ''
+    default: 'https://github.com/vados-dev/sl8541e_cus_go'
     type: string
    DEVICE_TREE_BRANCH:
     description: 'Custom Recovery Tree Branch (leave blank to use the default branch of the repository)'
-    default: ''
+    default: 'sl8541e_cus_go'
     type: string
   DEVICE_NAME:
     description: 'Specify your Device Codename (leave blank to auto-detect)'
-    default: ''
+    default: 'omni_sl8541e_cus_go'
     type: string
   DEVICE_PATH:
     description: 'Specify your Device Path (leave blank to auto-detect)'
-    default: ''
+    default: 'device/sprd/sl8541e_cus_go'
     type: string
   BUILD_TARGET:
     description: 'Specify your Build Target (use "pbrp" for Android 11 or above)'
-    default: 'recovery'
+    default: 'pbrp'
     type: choice
     options:
       - pbrp
