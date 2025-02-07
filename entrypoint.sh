@@ -36,7 +36,7 @@ git config --global user.email "$GITHUB_ACTOR_ID+$GITHUB_ACTOR@users.noreply.git
 
 # Initialize the repo
 echo "Initializing PBRP repo..."
-repo init --depth=1 -u https://github.com/PitchBlackRecoveryProject/manifest_pb.git -b "$MANIFEST_BRANCH"
+repo init --depth=1 -u https://github.com/vados-dev/manifest_pb.git -b "$MANIFEST_BRANCH"
 
 # Sync the repo
 echo "Syncing PBRP repo..."
@@ -137,18 +137,19 @@ echo "OUTPUT_DIR=${OUTPUT_DIR}" >> $GITHUB_ENV
 # Install additional dependencies for legacy branches
 if [[ "$MANIFEST_BRANCH" != "android-11.0" && "$MANIFEST_BRANCH" != "android-12.1" ]]; then
     echo "Installing Python 2 for legacy branches..."
-    sudo apt-get install -y python2
-    sudo ln -sf /usr/bin/python2 /usr/bin/python
+ #   sudo apt-get install -y python2
+ #   sudo ln -sf /usr/bin/python2 /usr/bin/python
+     sudo apt-get install python2 python-is-python2
 else
     echo "No need to install Python 2 for this branch."
 fi
 
 # Fix missing fonts
-echo "Fixing missing fonts..."
-mkdir -p external/noto-fonts/other
-cd external/noto-fonts/other
-wget https://github.com/cd-Crypton/custom-recovery-extras/raw/main/missing-font.zip
-unzip -o missing-font.zip
+#echo "Fixing missing fonts..."
+#mkdir -p external/noto-fonts/other
+#cd external/noto-fonts/other
+#wget https://github.com/cd-Crypton/custom-recovery-extras/raw/main/missing-font.zip
+#unzip -o missing-font.zip
 cd "$MANIFEST_DIR"
 
 # Build PBRP
